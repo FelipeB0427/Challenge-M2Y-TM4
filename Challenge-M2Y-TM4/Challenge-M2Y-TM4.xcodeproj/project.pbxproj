@@ -51,8 +51,9 @@
 		15CB7364279A6DC300B3DDCE /* Challenge-M2Y-TM4 */ = {
 			isa = PBXGroup;
 			children = (
-				15CB7365279A6DC300B3DDCE /* Challenge_M2Y_TM4App.swift */,
-				15CB7367279A6DC300B3DDCE /* ContentView.swift */,
+				15CB7375279A6E0600B3DDCE /* ViewModel */,
+				15CB7374279A6E0100B3DDCE /* Model */,
+				15CB7373279A6DFC00B3DDCE /* View */,
 				15CB7369279A6DC500B3DDCE /* Assets.xcassets */,
 				15CB736B279A6DC500B3DDCE /* Preview Content */,
 			);
@@ -65,6 +66,29 @@
 				15CB736C279A6DC500B3DDCE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		15CB7373279A6DFC00B3DDCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15CB7367279A6DC300B3DDCE /* ContentView.swift */,
+				15CB7365279A6DC300B3DDCE /* Challenge_M2Y_TM4App.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15CB7374279A6E0100B3DDCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15CB7375279A6E0600B3DDCE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
