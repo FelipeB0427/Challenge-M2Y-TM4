@@ -23,6 +23,7 @@ struct HomeView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(minWidth: 0, maxWidth: .infinity)
+                LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .center)
             } //: COVER IMAGE
             
             // MARK: - TITLE

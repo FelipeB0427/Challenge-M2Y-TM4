@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Uma (struct) que contem as informações desejadas dos filmes similares.
 struct MoviesList: Codable {
     let id: Int
     let title: String
