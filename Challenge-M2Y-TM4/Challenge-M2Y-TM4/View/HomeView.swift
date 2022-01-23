@@ -45,13 +45,20 @@ struct HomeView: View {
             
             // MARK: - STATS
             HStack {
+                let votes = Double(movieData.movie?.vote_count ?? Int(0.0))
+                let formattedVotes = votes / 1000.0
+                
                 Image(systemName: "heart.fill")
                     .frame(width: 20, height: 20)
-                Text("\(movieData.movie?.vote_count ?? 0) Likes")
+                Text(String(format: "%.1fK", formattedVotes))
+                Text("Likes")
                     .padding(.trailing, 20)
+                    .offset(x: -3)
                 
                 Image(systemName: "hands.sparkles.fill")
-                Text("\(movieData.movie?.popularity ?? 0.0)")
+                Text(String(format: "%.1fK", movieData.movie?.popularity ?? 0.0))
+                Text("Popularity")
+                    .offset(x: -3)
                 
                 Spacer()
             } //: STATS
