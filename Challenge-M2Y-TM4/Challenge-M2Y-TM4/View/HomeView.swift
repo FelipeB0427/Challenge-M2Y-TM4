@@ -11,14 +11,15 @@ struct HomeView: View {
     // MARK: - PROPERTIES
     @State var isLiked: Bool = false
     @StateObject var movieData = HomeViewModel()
+    @StateObject var moviesListData = HomeMoviesListViewModel()
     
     // MARK: - BODY
-    var body: some View {
+    var body: some View {        
         ScrollView(.vertical, showsIndicators: false) {
         VStack {
             // MARK: - COVER IMAGE
             ZStack {
-                Image("placeholder")
+                Image(systemName: "person.fill").loadImage(endPoint: "\(movieData.movie?.poster_path ?? "placeholder")")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(minWidth: 0, maxWidth: .infinity)
@@ -57,12 +58,11 @@ struct HomeView: View {
             
         }
         
-        ForEach(0..<5) { _ in
-            MovieDetailListView()
-                .padding()
-            
-            
-        }
+//            ForEach(moviesListData.movies) { movies in
+//                MovieDetailListView(title: "\(moviesListData.movies?.title ?? "No Title")", year: "\(moviesListData.movies?.release_date ?? "No Date")", categories: "\(moviesListData.movies?.poster_patb ?? "No Category")")
+//                .padding()
+//                Divider()
+//        }
     }
     .ignoresSafeArea(.all)
     }
