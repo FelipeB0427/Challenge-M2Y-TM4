@@ -45,12 +45,11 @@ struct HomeView: View {
             
             // MARK: - STATS
             HStack {
-                let votes = Double(movieData.movie?.vote_count ?? Int(0.0))
-                let formattedVotes = votes / 1000.0
+                let votes = Double(movieData.movie?.vote_count ?? Int(0.0)) / 1000.0
                 
                 Image(systemName: "heart.fill")
                     .frame(width: 20, height: 20)
-                Text(String(format: "%.1fK", formattedVotes))
+                Text(String(format: "%.1fK", votes))
                 Text("Likes")
                     .padding(.trailing, 20)
                     .offset(x: -3)
@@ -66,11 +65,13 @@ struct HomeView: View {
             
         }
         
-//            ForEach(moviesListData.movies) { movies in
-//                MovieDetailListView(title: "\(moviesListData.movies?.title ?? "No Title")", year: "\(moviesListData.movies?.release_date ?? "No Date")", categories: "\(moviesListData.movies?.poster_patb ?? "No Category")")
-//                .padding()
-//                Divider()
-//        }
+            ForEach(moviesListData.movies ?? [MoviesList]()) { movie in
+                MovieDetailListView(title: movie.title, year: "\(movie.release_date)", categories: "\(movie.id)", url: movie.poster_path ?? "placeholder")
+                .padding()
+                Divider()
+                    .frame(height: 0.3)
+                    .background(.gray)
+        }
     }
     .ignoresSafeArea(.all)
     }

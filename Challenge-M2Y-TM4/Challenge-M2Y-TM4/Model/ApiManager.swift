@@ -26,8 +26,8 @@ class ApiManager {
         }
     }
     
-    func getMoviesList(url: String, completion: @escaping(Result<[MoviesList], Error>) -> Void) {
-        AF.request(url, method: .get).responseDecodable { (response: DataResponse<[MoviesList], AFError>) in
+    func getMoviesList(url: String, completion: @escaping(Result<MoviesListResult, Error>) -> Void) {
+        AF.request(url, method: .get).responseDecodable { (response: DataResponse<MoviesListResult, AFError>) in
             guard let moviesList = response.value, response.error == nil else {
                 completion(.failure(ApiError.requestError))
                 return

@@ -12,7 +12,7 @@
 		155377AD279B3FD6004E0122 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155377AC279B3FD6004E0122 /* HomeViewModel.swift */; };
 		155377AF279C932D004E0122 /* MoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155377AE279C932D004E0122 /* MoviesList.swift */; };
 		155377B1279C9626004E0122 /* HomeMoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155377B0279C9626004E0122 /* HomeMoviesListViewModel.swift */; };
-		155377B4279DA135004E0122 /* LoadMovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155377B3279DA135004E0122 /* LoadMovieImage.swift */; };
+		155377B4279DA135004E0122 /* Image+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155377B3279DA135004E0122 /* Image+loadImage.swift */; };
 		15CB7366279A6DC300B3DDCE /* Challenge_M2Y_TM4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CB7365279A6DC300B3DDCE /* Challenge_M2Y_TM4App.swift */; };
 		15CB7368279A6DC300B3DDCE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CB7367279A6DC300B3DDCE /* HomeView.swift */; };
 		15CB736A279A6DC500B3DDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15CB7369279A6DC500B3DDCE /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 		155377AC279B3FD6004E0122 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		155377AE279C932D004E0122 /* MoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesList.swift; sourceTree = "<group>"; };
 		155377B0279C9626004E0122 /* HomeMoviesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesListViewModel.swift; sourceTree = "<group>"; };
-		155377B3279DA135004E0122 /* LoadMovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMovieImage.swift; sourceTree = "<group>"; };
+		155377B3279DA135004E0122 /* Image+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+loadImage.swift"; sourceTree = "<group>"; };
 		15CB7362279A6DC300B3DDCE /* Challenge-M2Y-TM4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge-M2Y-TM4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CB7365279A6DC300B3DDCE /* Challenge_M2Y_TM4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_M2Y_TM4App.swift; sourceTree = "<group>"; };
 		15CB7367279A6DC300B3DDCE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -48,12 +48,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		155377B2279DA11E004E0122 /* Utilities */ = {
+		155377B5279DF75F004E0122 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				155377B3279DA135004E0122 /* LoadMovieImage.swift */,
+				155377B3279DA135004E0122 /* Image+loadImage.swift */,
 			);
-			path = Utilities;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		15CB7359279A6DC300B3DDCE = {
@@ -75,7 +75,7 @@
 		15CB7364279A6DC300B3DDCE /* Challenge-M2Y-TM4 */ = {
 			isa = PBXGroup;
 			children = (
-				155377B2279DA11E004E0122 /* Utilities */,
+				155377B5279DF75F004E0122 /* Extension */,
 				15CB7375279A6E0600B3DDCE /* ViewModel */,
 				15CB7374279A6E0100B3DDCE /* Model */,
 				15CB7373279A6DFC00B3DDCE /* View */,
@@ -205,7 +205,7 @@
 				155377B1279C9626004E0122 /* HomeMoviesListViewModel.swift in Sources */,
 				15CB7379279B0D6D00B3DDCE /* Movie.swift in Sources */,
 				155377AB279B33A0004E0122 /* ApiManager.swift in Sources */,
-				155377B4279DA135004E0122 /* LoadMovieImage.swift in Sources */,
+				155377B4279DA135004E0122 /* Image+loadImage.swift in Sources */,
 				15CB7377279AFE5D00B3DDCE /* MovieDetailListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

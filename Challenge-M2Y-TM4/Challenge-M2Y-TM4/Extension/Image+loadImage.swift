@@ -1,5 +1,5 @@
 //
-//  LoadMovieImage.swift
+//  Image+loadImage.swift
 //  Challenge-M2Y-TM4
 //
 //  Created by Felipe Brigagão de Almeida on 23/01/22.
