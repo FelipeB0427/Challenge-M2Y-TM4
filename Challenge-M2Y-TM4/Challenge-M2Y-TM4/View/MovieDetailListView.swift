@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct MovieDetailListView: View {
+    var title: String
+    var year: String
+    var categories: String
+    var url: String
+    
     var body: some View {
         HStack(spacing: 15) {
-            Image(systemName: "square.fill")
+            Image(systemName: "square.fill").loadImage(endPoint: "\(url)")
                 .resizable()
                 .frame(width: 100, height: 160)
             
             VStack(alignment: .leading) {
-                Text("Edward Scissorhands")
+                Text(title)
                 
                 HStack {
-                    Text("1990")
-                    Text("Drama, Fantasy")
+                    Text(year)
+                    Text(categories)
                 }
                 .font(.subheadline)
             }
@@ -33,7 +38,7 @@ struct MovieDetailListView: View {
 
 struct MovieDetailListView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailListView()
+        MovieDetailListView(title: "Test", year: "1990", categories: "Drama", url: "5ZoFGrFCKP0QrcfVwOIHiAwunBg.jpg")
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
             .padding()

@@ -13,8 +13,8 @@ enum ApiError: Error {
     case requestError
 }
 
-class ApiRequest {
-    static let shared = ApiRequest()
+class ApiManager {
+    static let shared = ApiManager()
     
     func getMovie(url: String, completion: @escaping(Result<Movie, Error>) -> Void) {
         AF.request(url, method: .get).responseDecodable { (response: DataResponse<Movie, AFError>) in
@@ -26,7 +26,13 @@ class ApiRequest {
         }
     }
     
-    
+    func getMoviesList(url: String, completion: @escaping(Result<MoviesListResult, Error>) -> Void) {
+        AF.request(url, method: .get).responseDecodable { (response: DataResponse<MoviesListResult, AFError>) in
+            guard let moviesList = response.value, response.error == nil else {
+                completion(.failure(ApiError.requestError))
+                return
+            }
+            completion(.success(moviesList))
+        }
+    }
 }
-
-

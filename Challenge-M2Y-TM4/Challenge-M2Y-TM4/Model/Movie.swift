@@ -7,10 +7,12 @@
 
 import Foundation
 
+/// Uma (struct) que contem as informações desejadas de um filme.
 struct Movie: Codable {
     let id: Int
     let title: String
     let popularity: Double
     let vote_count: Int
     let release_date: String
+    let poster_path: String?
 }

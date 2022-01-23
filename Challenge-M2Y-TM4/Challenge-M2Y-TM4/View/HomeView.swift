@@ -11,17 +11,19 @@ struct HomeView: View {
     // MARK: - PROPERTIES
     @State var isLiked: Bool = false
     @StateObject var movieData = HomeViewModel()
+    @StateObject var moviesListData = HomeMoviesListViewModel()
     
     // MARK: - BODY
-    var body: some View {
+    var body: some View {        
         ScrollView(.vertical, showsIndicators: false) {
         VStack {
             // MARK: - COVER IMAGE
             ZStack {
-                Image("placeholder")
+                Image(systemName: "person.fill").loadImage(endPoint: "\(movieData.movie?.poster_path ?? "placeholder")")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(minWidth: 0, maxWidth: .infinity)
+                LinearGradient(colors: [.black, .clear], startPoint: .bottom, endPoint: .center)
             } //: COVER IMAGE
             
             // MARK: - TITLE
@@ -43,13 +45,19 @@ struct HomeView: View {
             
             // MARK: - STATS
             HStack {
+                let votes = Double(movieData.movie?.vote_count ?? Int(0.0)) / 1000.0
+                
                 Image(systemName: "heart.fill")
                     .frame(width: 20, height: 20)
-                Text("\(movieData.movie?.vote_count ?? 0) Likes")
+                Text(String(format: "%.1fK", votes))
+                Text("Likes")
                     .padding(.trailing, 20)
+                    .offset(x: -3)
                 
                 Image(systemName: "hands.sparkles.fill")
-                Text("\(movieData.movie?.popularity ?? 0.0)")
+                Text(String(format: "%.1fK", movieData.movie?.popularity ?? 0.0))
+                Text("Popularity")
+                    .offset(x: -3)
                 
                 Spacer()
             } //: STATS
@@ -57,11 +65,12 @@ struct HomeView: View {
             
         }
         
-        ForEach(0..<5) { _ in
-            MovieDetailListView()
+            ForEach(moviesListData.movies ?? [MoviesList]()) { movie in
+                MovieDetailListView(title: movie.title, year: "\(movie.release_date)", categories: "\(movie.id)", url: movie.poster_path ?? "placeholder")
                 .padding()
-            
-            
+                Divider()
+                    .frame(height: 0.3)
+                    .background(.gray)
         }
     }
     .ignoresSafeArea(.all)
