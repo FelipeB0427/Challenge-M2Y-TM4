@@ -1,7 +1,7 @@
 
 # Challenge-M2Y-TM4
 
-Um desafio proporcionado pela Mobile2You, com proposito de analisar conhecimentos sobre UI, consumo de API, versionamento de código e testes unitários, utilizando como base, um aplicativo já existente.
+Um desafio proporcionado pela Mobile2You, com proposito de analisar conhecimentos sobre UI, consumo de API, versionamento de código utilizando como base, um aplicativo já existente.
 
 ## Funcionalidades
 
