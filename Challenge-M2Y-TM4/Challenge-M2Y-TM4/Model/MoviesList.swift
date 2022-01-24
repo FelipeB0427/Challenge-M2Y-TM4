@@ -8,7 +8,7 @@
 import Foundation
 
 /// Uma (struct) que contem as informações desejadas dos filmes similares.
-struct MoviesList: Codable, Identifiable {
+struct MoviesList: Decodable, Identifiable {
     let id: Int
     let title: String
     let genre_ids: [Int]
@@ -16,7 +16,7 @@ struct MoviesList: Codable, Identifiable {
     let poster_path: String?
 }
 
-struct MoviesListResult: Codable {
+struct MoviesListResult: Decodable {
     let page: Int
     let results: [MoviesList]
 }

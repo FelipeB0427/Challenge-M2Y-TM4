@@ -16,7 +16,11 @@ class ApiManager {
     init() {
        getGenres(url: "https://api.themoviedb.org/3/genre/movie/list?api_key=3066657fbf3c19a5a89806e76ea61a19&language=en-US")
     }
-        
+    
+    /// Utilizando Alamofire, um request do tipo GET é feito, e a resposta é armazenada em [movie], assim tendo os valores e um erro, caso ocorra, o completion é utilizado para definir se recebemos um sucesso ou uma falha.
+    /// - Parameters:
+    ///   - url: Armazena o link que necessitamos para receber os detalhes do filme.
+    ///   - completion: Utilziado para armazenarmos os dados do filme e utilizando o (@escaping) para ser utilizado fora de seu escopo.
     func getMovie(url: String, completion: @escaping(Result<Movie, Error>) -> Void) {
         AF.request(url, method: .get).responseDecodable { (response: DataResponse<Movie, AFError>) in
             guard let movie = response.value, response.error == nil else {
@@ -27,6 +31,11 @@ class ApiManager {
         }
     }
     
+    
+    /// Utilizando Alamofire, um request do tipo GET é feito, e a resposta é armazenada em [moviesList], assim tendo os valores e um erro, caso ocorra, o completion é utilizado para definir se recebemos um sucesso ou uma falha.
+    /// - Parameters:
+    ///   - url: Armazena o link que necessitamos para receber os detalhes do filme.
+    ///   - completion: Utilziado para armazenarmos os dados do filme e utilizando o (@escaping) para ser utilizado fora de seu escopo.
     func getMoviesList(url: String, completion: @escaping(Result<MoviesListResult, Error>) -> Void) {
         AF.request(url, method: .get).responseDecodable { (response: DataResponse<MoviesListResult, AFError>) in
             guard let moviesList = response.value, response.error == nil else {
@@ -37,6 +46,10 @@ class ApiManager {
         }
     }
     
+    
+    /// Utilizando Alamofire, um request do tipo GET é feito, e a resposta é armazenada em [list], assim tendo os valores e um erro, caso ocorra, o completion é utilizado para definir se recebemos um sucesso ou uma falha.
+    /// O Array de [Genre] recebe recebe seu nome inves do id.
+    /// - Parameter url: Armazena o link que necessitamos para receber os detalhes do filme.
     private func getGenres(url: String) {
         func fillGenreDictionary(genres: [Genre]) {
             for genre in genres {

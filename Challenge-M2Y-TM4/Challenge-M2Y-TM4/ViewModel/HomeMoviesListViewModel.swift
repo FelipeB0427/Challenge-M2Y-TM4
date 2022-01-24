@@ -24,6 +24,9 @@ class HomeMoviesListViewModel: ObservableObject {
         }
     }
     
+    /// Utilizando o singleton da (ApiManager), recebemos os [genres] e atribuimos os valores na variável [allGenres].
+    /// - Parameter ids: recebe um Array de {Int}.
+    /// - Returns: Os valores do Array de (Genres)
     func getGenresList(ids: [Int]) -> String {
         let genres = ApiManager.shared.genres
         guard !genres.isEmpty else { return "No Genre" }
