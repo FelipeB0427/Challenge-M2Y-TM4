@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1519F846279F2366009CFB9D /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519F845279F2366009CFB9D /* SplashScreen.swift */; };
 		155377A9279B337D004E0122 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 155377A8279B337D004E0122 /* Alamofire */; };
 		155377AB279B33A0004E0122 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155377AA279B33A0004E0122 /* ApiManager.swift */; };
 		155377AD279B3FD6004E0122 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155377AC279B3FD6004E0122 /* HomeViewModel.swift */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1519F844279F217D009CFB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1519F845279F2366009CFB9D /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		155377AA279B33A0004E0122 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		155377AC279B3FD6004E0122 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		155377AE279C932D004E0122 /* MoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesList.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		15CB7364279A6DC300B3DDCE /* Challenge-M2Y-TM4 */ = {
 			isa = PBXGroup;
 			children = (
+				1519F844279F217D009CFB9D /* Info.plist */,
 				155377B5279DF75F004E0122 /* Extension */,
 				15CB7375279A6E0600B3DDCE /* ViewModel */,
 				15CB7374279A6E0100B3DDCE /* Model */,
@@ -104,6 +108,7 @@
 				15CB7367279A6DC300B3DDCE /* HomeView.swift */,
 				15CB7365279A6DC300B3DDCE /* Challenge_M2Y_TM4App.swift */,
 				15CB7376279AFE5D00B3DDCE /* MovieDetailListView.swift */,
+				1519F845279F2366009CFB9D /* SplashScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				155377B4279DA135004E0122 /* Image+loadImage.swift in Sources */,
 				15CB7377279AFE5D00B3DDCE /* MovieDetailListView.swift in Sources */,
 				155377B9279E0340004E0122 /* Genre.swift in Sources */,
+				1519F846279F2366009CFB9D /* SplashScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,9 +354,9 @@
 				DEVELOPMENT_TEAM = 3753BCYQD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Challenge-M2Y-TM4/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -377,9 +383,9 @@
 				DEVELOPMENT_TEAM = 3753BCYQD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Challenge-M2Y-TM4/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
