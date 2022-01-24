@@ -23,4 +23,16 @@ class HomeMoviesListViewModel: ObservableObject {
             }
         }
     }
+    
+    func getGenresList(ids: [Int]) -> String {
+        let genres = ApiManager.shared.genres
+        guard !genres.isEmpty else { return "No Genre" }
+        var allGenres = ""
+        
+        ids.forEach { id in
+            allGenres.append(" \(genres[id] ?? "")")
+        }
+        
+        return allGenres
+    }
 }
