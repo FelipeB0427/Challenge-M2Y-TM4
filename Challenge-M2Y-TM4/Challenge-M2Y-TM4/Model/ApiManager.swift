@@ -9,11 +9,6 @@ import Foundation
 import Alamofire
 import SwiftUI
 
-// TODO: Create a specific file.
-enum ApiError: Error {
-    case requestError
-}
-
 class ApiManager {
     static let shared = ApiManager()
     var genres: [Int : String] = [:]
