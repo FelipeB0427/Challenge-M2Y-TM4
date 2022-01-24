@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
 
 // TODO: Create a specific file.
 enum ApiError: Error {
@@ -15,7 +16,12 @@ enum ApiError: Error {
 
 class ApiManager {
     static let shared = ApiManager()
+    var genres: [Int : String] = [:]
     
+    init() {
+       getGenres(url: "https://api.themoviedb.org/3/genre/movie/list?api_key=3066657fbf3c19a5a89806e76ea61a19&language=en-US")
+    }
+        
     func getMovie(url: String, completion: @escaping(Result<Movie, Error>) -> Void) {
         AF.request(url, method: .get).responseDecodable { (response: DataResponse<Movie, AFError>) in
             guard let movie = response.value, response.error == nil else {
@@ -33,6 +39,20 @@ class ApiManager {
                 return
             }
             completion(.success(moviesList))
+        }
+    }
+    
+    private func getGenres(url: String) {
+        func fillGenreDictionary(genres: [Genre]) {
+            for genre in genres {
+                self.genres[genre.id] = genre.name
+            }
+        }
+        AF.request(url, method: .get).responseDecodable { (response: DataResponse<GenresList, AFError>) in
+            guard let list = response.value, response.error == nil else {
+                return
+            }
+            fillGenreDictionary(genres: list.genres)
         }
     }
 }
