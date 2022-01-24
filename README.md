@@ -8,7 +8,6 @@ Um desafio proporcionado pela Mobile2You, com proposito de analisar conhecimento
 - Design pattern: MVVM
 - UI Framework: SwiftUI
 - API Requests: Alamofire
-- Unit Tests
 
 ## Considerações
 
